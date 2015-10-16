@@ -77,9 +77,25 @@ TEST(IsPrimeTest, HandleTrueReturn){
 }
 */
 
+/* 参数化 */
 TEST_P(IsPrimeParamTest, HandleTrueReturn){
     int n = GetParam();
     EXPECT_TRUE(IsPrime(n));
 }
 
 INSTANTIATE_TEST_CASE_P(TrueReturn, IsPrimeParamTest, testing::Values(3, 5, 11, 23, 17));
+
+
+/* 类型参数化 */
+TYPED_TEST_CASE_P(TypeTest);
+
+TYPED_TEST_P(TypeTest, DoesBlah) {
+}
+
+TYPED_TEST_P(TypeTest, HasPropertyA) {
+}
+
+REGISTER_TYPED_TEST_CASE_P(TypeTest, DoesBlah, HasPropertyA);
+typedef testing::Types<char, int, unsigned int> MyTypes;
+INSTANTIATE_TYPED_TEST_CASE_P(My, TypeTest, MyTypes);
+

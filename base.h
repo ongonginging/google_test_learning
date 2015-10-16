@@ -29,4 +29,8 @@ class IsPrimeParamTest : public::testing::TestWithParam<int>
 {
 };
 
+template <typename T>
+class TypeTest : public testing::Test {
+};
+
 #endif //__BASE_H__
