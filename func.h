@@ -22,4 +22,9 @@ bool IsPrime(int n){
     return true;
 }
 
+void Die(){
+    int *pInt = 0;
+    *pInt = 42 ;
+}
+
 #endif //__FUNC_H__

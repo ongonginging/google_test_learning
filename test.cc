@@ -99,3 +99,7 @@ REGISTER_TYPED_TEST_CASE_P(TypeTest, DoesBlah, HasPropertyA);
 typedef testing::Types<char, int, unsigned int> MyTypes;
 INSTANTIATE_TYPED_TEST_CASE_P(My, TypeTest, MyTypes);
 
+TEST(FooDeathTest, Demo){
+    EXPECT_DEATH(Die(), "");
+}
+
